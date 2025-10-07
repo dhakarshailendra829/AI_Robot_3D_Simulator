@@ -82,7 +82,6 @@ if st.sidebar.button("Generate & Run Simulation"):
     end_effector_positions = []
     task_colors = []
 
-    # Color mapping for tasks
     task_color_map = {
         "pick": "green",
         "place": "blue",
@@ -90,14 +89,12 @@ if st.sidebar.button("Generate & Run Simulation"):
         "sort": "purple"
     }
 
-    # Predict Actions per Task
     for idx, row in tasks_df.iterrows():
         features = row[['human_' + str(i) for i in range(45)] + ['obj_' + str(i) for i in range(5)]].values.astype(np.float32)
         action = model(torch.from_numpy(features)).detach().numpy()
         robot_actions.append(action)
         robot.step(action)
 
-        # End-effector position calculation
         x, y, z = 0, 0, 0
         angle = 0
         for i, a in enumerate(action):
@@ -113,30 +110,22 @@ if st.sidebar.button("Generate & Run Simulation"):
     st.write("Predicted Robot Joint Angles")
     st.dataframe(pd.DataFrame(robot_actions, columns=[f'joint_{i}' for i in range(output_dim)]))
 
-    # ----------------------------- 2D Visualization -----------------------------
     plot_2d_robot(robot_actions[-1], num_joints=output_dim, color="purple", title="📐 2D Robot Arm Visualization")
 
-    # ----------------------------- 3D Visualization -----------------------------
     plot_3d_robot(
         robot_actions,
         num_joints=output_dim,
-        title="🖥️ 3D Robot Arm Animation (Play / Stop / Reset)",
+        title="🖥️ 3D Robot Arm Animation",
         end_effector_positions=end_effector_positions,
         task_colors=task_colors
     )
 
-    # ----------------------------- 3D End-Effector Path -----------------------------
     plot_end_effector_path(end_effector_positions, task_colors)
 
-    # ----------------------------- Performance Graph -----------------------------
     plot_performance_graph(robot_actions, title="📊 Robot Action Magnitude per Task", color="magenta")
 
-    # ----------------------------- 3D Performance (Cylinder/Box workaround) -----------------------------
     plot_performance_bar_3d(robot_actions, tasks_df)
 
-# --------------------------------------------------------------------
-# 🕹️ Manual Joint Control
-# --------------------------------------------------------------------
-st.subheader("🎛️ Manual Joint Control")
+st.subheader("Manual Joint Control")
 manual_action = np.array(joint_sliders)
-plot_2d_robot(manual_action, num_joints=output_dim, color="orange", title="🎛️ Manual Joint Control")
+plot_2d_robot(manual_action, num_joints=output_dim, color="orange", title="Manual Joint Control")

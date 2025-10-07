@@ -3,9 +3,6 @@ import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
 
-# -------------------------------------------------------------------
-# 🟣 2D Robot Visualization
-# -------------------------------------------------------------------
 def plot_2d_robot(action, num_joints, color="purple", title="2D Robot Arm"):
     """
     2D Robot Arm Visualization using Matplotlib
@@ -25,9 +22,6 @@ def plot_2d_robot(action, num_joints, color="purple", title="2D Robot Arm"):
     ax.set_title(title)
     st.pyplot(fig)
 
-# -------------------------------------------------------------------
-# 🟡 3D Robot Visualization with optional extra data
-# -------------------------------------------------------------------
 def plot_3d_robot(
     robot_actions,
     num_joints,
@@ -45,7 +39,6 @@ def plot_3d_robot(
     if colors_map is None:
         colors_map = ["green", "red", "blue", "orange", "purple", "cyan"]
 
-    # Animation frames for each action
     frames = []
     for idx, action in enumerate(robot_actions):
         x3, y3, z3, c3 = [0], [0], [0], []
@@ -66,7 +59,6 @@ def plot_3d_robot(
             name=f'frame{idx}'
         ))
 
-    # Initial pose
     x0, y0, z0, c0 = [0], [0], [0], []
     angle = 0
     for i, a in enumerate(robot_actions[0]):
@@ -86,7 +78,6 @@ def plot_3d_robot(
         frames=frames
     )
 
-    # Optional: End-effector path
     if end_effector_positions is not None and len(end_effector_positions) > 1:
         xe, ye, ze = zip(*end_effector_positions)
         fig3.add_trace(go.Scatter3d(
@@ -97,9 +88,8 @@ def plot_3d_robot(
             name='End Effector Path'
         ))
 
-    # Optional: Task Colors (color-coded joints per task)
     if task_colors is not None and len(task_colors) == len(robot_actions):
-        pass  # You can use this to color per task in future if needed
+        pass  
 
     fig3.update_layout(
         title=title,
@@ -123,9 +113,6 @@ def plot_3d_robot(
 
     st.plotly_chart(fig3, use_container_width=True)
 
-# -------------------------------------------------------------------
-# 🔸 2D Performance Line Graph
-# -------------------------------------------------------------------
 def plot_performance_graph(robot_actions, title="Robot Action Magnitude per Task", color="magenta"):
     """
     Plot performance graph: magnitude of joint actions per task
@@ -141,9 +128,6 @@ def plot_performance_graph(robot_actions, title="Robot Action Magnitude per Task
     ax.grid(True, linestyle='--', alpha=0.5)
     st.pyplot(fig)
 
-# -------------------------------------------------------------------
-# 🟢 End Effector Path Visualization (Optional)
-# -------------------------------------------------------------------
 def plot_end_effector_path(positions, task_colors):
     x, y, z = zip(*positions)
     fig = go.Figure()
@@ -156,9 +140,6 @@ def plot_end_effector_path(positions, task_colors):
     fig.update_layout(scene=dict(aspectmode="cube"))
     st.plotly_chart(fig, use_container_width=True)
 
-# -------------------------------------------------------------------
-# 🟠 3D Performance "Bar" Graph using Scatter3d Lines (No Bar3d)
-# -------------------------------------------------------------------
 def plot_performance_bar_3d(robot_actions, tasks_df):
     """
     Simulate a 3D Bar Graph using vertical Scatter3d lines

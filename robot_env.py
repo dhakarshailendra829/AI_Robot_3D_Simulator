@@ -1,6 +1,4 @@
-# robot_env.py
 import numpy as np
-
 class RobotEnv:
     def __init__(self, num_joints=6):
         self.num_joints = num_joints

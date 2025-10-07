@@ -1,0 +1,11 @@
+streamlit
+torch
+numpy
+pandas
+matplotlib
+pybullet
+plotly
+mediapipe
+opencv-python
+stable-baselines3
+gym

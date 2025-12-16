@@ -1,6 +1,6 @@
 # AI Robot 3D Simulator
 <p align="center">
-  <img src="images/robot_banner.png" width="800" alt="AI Robot 3D Simulator" />
+  <img src="images/RobotLogo.png" width="20" alt="AI Robot 3D Simulator" />
 </p>
 
 <p align="center">
@@ -12,11 +12,11 @@
   <a href="https://github.com/dhakarshailendra829/AI_Robot_3D_Simulator">Star Repo</a> •
   <a href="#-features">Features</a> •
   <a href="#-screenshots">Screenshots</a> •
-  <a href="#-system-overview">Overview</a> •
+  <a href="#-system-overview">System Overview</a> •
   <a href="#-architecture">Architecture</a> •
   <a href="#-installation">Installation</a> •
-  <a href="#-training--model">Model</a> •
-  <a href="#-ui--visualization">UI</a>
+  <a href="#-training--model">Training & Model</a> •
+  <a href="#-ui--visualization">UI & Visualization</a>
 </p>
 
 ---

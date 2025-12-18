@@ -1,6 +1,6 @@
 # AI Robot 3D Simulator
 <p align="center">
-  <img src="images/RobotLogo.png" width="20" alt="AI Robot 3D Simulator" />
+  <img src="images/RobotLogo.png" width="100" alt="AI Robot 3D Simulator" />
 </p>
 
 <p align="center">
@@ -21,11 +21,18 @@
 
 ---
 
-## Project Summary
-**AI Robot 3D Simulator** is a professional‑grade, self‑learning robotic arm simulation platform that demonstrates **intelligent robotic control, task scheduling, and real‑time 3D visualization** in a single unified system.
-The project combines **behavior‑cloning–based machine learning**, **interactive dashboards**, and **live 3D animations** to simulate industrial robot tasks such as **pick, place, move, and sort**. It supports both **manual joint‑level control** and **fully autonomous execution** using a trained AI model.
-This repository is designed as a **portfolio‑ready, research‑oriented showcase** of AI + Robotics + Visualization engineering.
+### Project Summary
+
+AI Robot 3D Simulator is a professional‑grade, self‑learning robotic arm simulation platform that demonstrates intelligent robotic control, task scheduling, and real‑time 3D visualization in a single unified system.
+
+The project combines behavior‑cloning–based machine learning, interactive dashboards, and live 3D animations to simulate industrial robot tasks such as pick, place, move, and sort. It supports both manual joint‑level control and fully autonomous execution using a trained AI model.
+
+This repository is designed as a portfolio‑ready, research‑oriented showcase of AI, Robotics, and Visualization engineering.
+
 ---
+
+**Note:** Headings use `###` instead of `#` to keep font size normal and clean on GitHub.
+
 
 ## Features
 ### AI‑Powered Learning
@@ -184,7 +191,7 @@ The Streamlit UI enables:
 * Cloud‑based deployment
 ---
 
-## Author
+### Author
 **Shailendra Dhakad**
 AI • Robotics • Systems Engineering
 ---

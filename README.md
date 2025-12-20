@@ -6,8 +6,14 @@
 
 <p align="center">
   <b>Advanced Self‑Learning Industrial Robot Arm Simulation Platform</b><br/>
-  <i>Artificial Intelligence • Robotics • Real‑Time 3D Visualization • Interactive Control</i>
 </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Artificial%20Intelligence-AI-blueviolet" />
+  <img src="https://img.shields.io/badge/Robotics-Control%20Systems-orange" />
+  <img src="https://img.shields.io/badge/Real--Time-3D%20Visualization-brightgreen" />
+  <img src="https://img.shields.io/badge/Interactive-Control-blue" />
+</p>
+
 
 <p align="center">
   <a href="https://github.com/dhakarshailendra829/AI_Robot_3D_Simulator"> Star Repository</a> •

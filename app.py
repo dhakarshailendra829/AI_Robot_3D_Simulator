@@ -144,7 +144,7 @@ if st.session_state.get('run_simulation_flag', False):
     end_effector_positions = []
     task_colors = []
     
-    task_color_map = {"pick": "#FF66FF", "place": "#33CCFF", "move": "#66FF33", "sort": "#FF3333"}
+    task_color_map = {"pick": "#EC0D8F", "place": "#0D0DE7", "move": "#49E116", "sort": "#E91515"}
     
     for idx, row in tasks_df.iterrows():
         try:
@@ -163,7 +163,7 @@ if st.session_state.get('run_simulation_flag', False):
             
             robot_actions.append(action)
             end_effector_positions.append(info['position'].tolist())
-            task_colors.append(task_color_map.get(row['task_type'], "#888888"))
+            task_colors.append(task_color_map.get(row['task_type'], "#DFB714"))
             
             st.session_state.perf_metrics['timestamps'].append(time.time())
             st.session_state.perf_metrics['action_norms'].append(np.linalg.norm(action))
